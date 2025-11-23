@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sivan-askayo-photography-68c2cc33.zappy5.app/sitemap.xml

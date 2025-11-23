@@ -1,0 +1,495 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional food photography services and luxury hotel photography by famous food photographers. Specializing in editorial and commercial photography for hospitality brands.">
+  <meta name="keywords" content="food photography services, famous food photographers, Sivan Askayo Photography, luxury hotel photography, editorial photography">
+  <title>Professional Photography Services — Sivan Askayo Photography</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '68c2cc33-7bdf-4b99-8ccc-bbdcfeb4cb7f',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/sivan-askayo-photography-photography-logo.webp" alt="Sivan Askayo Photography" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="Call us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">Contact</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Comprehensive Photography Services for Luxury Brands</h1>
+      <h3>Specializing in editorial and commercial photography that elevates hospitality marketing</h3>
+    </div>
+  </section>
+
+  <section class="services-detailed">
+    <div class="container">
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>Luxury Hotels Photography</h2>
+          <p>Our luxury hotel photography services capture the essence of high-end hospitality, showcasing architectural brilliance, interior design excellence, and the unique ambiance that sets your property apart. We understand that luxury hoteliers and boutique hotel owners need imagery that not only documents their spaces but tells a compelling story that resonates with affluent travelers.</p>
+          <p>From grand lobbies and elegant suites to intimate spa retreats and stunning rooftop venues, we photograph every aspect of your property with meticulous attention to lighting, composition, and detail. Our images are designed to be used across multiple marketing channels including websites, social media, print advertising, and editorial features in leading hospitality publications.</p>
+          <p>We work closely with hotel management teams and marketing agencies to understand your brand positioning and target audience, ensuring that every photograph aligns with your marketing objectives. Whether you're launching a new property, renovating existing spaces, or refreshing your visual content library, Sivan Askayo Photography delivers images that drive bookings and enhance your brand reputation.</p>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-4" data-context="Luxurious hotel lobby with marble floors, grand chandelier, elegant seating areas, and floor-to-ceiling windows showcasing natural light and sophisticated design" src="assets/sivan-askayo-photography-photography-service-service-4.webp" alt="Luxury hotel interior photography" class="service-img">
+        </div>
+      </div>
+
+      <div class="service-detail reverse">
+        <div class="service-detail-content">
+          <h2>Travel Photography</h2>
+          <p>Travel photography is about capturing the spirit of a destination and inspiring viewers to experience it for themselves. Our travel photography services go beyond standard destination shots to create evocative imagery that tells authentic stories about places, cultures, and experiences.</p>
+          <p>We specialize in photographing luxury resorts, boutique hotels, and unique travel destinations for hospitality marketing agencies and real estate developers. Our images showcase not just the physical beauty of locations but the emotions and experiences they offer—from serene beachfront sunsets to vibrant local markets, from adventurous outdoor activities to peaceful moments of relaxation.</p>
+          <p>Each travel photography project is approached with a journalist's eye for storytelling and a commercial photographer's understanding of marketing needs. We capture wide establishing shots that set the scene, medium shots that show activities and amenities, and intimate details that reveal the character of a destination. The result is a comprehensive visual library that can be used to promote your property or destination across all marketing platforms.</p>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-5" data-context="Stunning coastal landscape with crystal clear turquoise water, white sand beach, traditional wooden boat, and dramatic rocky cliffs under blue sky" src="assets/sivan-askayo-photography-photography-service-service-5.webp" alt="Travel destination photography" class="service-img">
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>Food Photography Services</h2>
+          <p>As one of the famous food photographers in the industry, we understand that food photography services require a unique blend of technical skill, artistic vision, and culinary knowledge. Our food photography captures the artistry of culinary creation, making dishes look as delicious in photographs as they taste in reality.</p>
+          <p>We work with luxury hotels, fine dining restaurants, hospitality marketing agencies, and lifestyle brands to create mouth-watering imagery for menus, websites, cookbooks, advertising campaigns, and social media. Our food photography services include on-location restaurant shoots, studio photography for product packaging, and editorial food styling for magazines and publications.</p>
+          <p>Every food photography session is carefully planned and executed with attention to lighting, composition, color harmony, and styling. We collaborate with chefs and food stylists to ensure that each dish is presented at its absolute best. Whether you need images of individual signature dishes, full menu photography, or lifestyle shots showing the dining experience, our food photography services deliver images that engage viewers and drive customer interest.</p>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-6" data-context="Beautifully plated gourmet seafood dish with vibrant garnishes, artistic sauce presentation, and elegant table setting in upscale restaurant ambiance" src="assets/sivan-askayo-photography-photography-service-service-6.webp" alt="Professional food photography" class="service-img">
+        </div>
+      </div>
+
+      <div class="service-detail reverse">
+        <div class="service-detail-content">
+          <h2>Lifestyle Photography</h2>
+          <p>Lifestyle photography brings authenticity and human connection to brand storytelling. Our lifestyle photography services capture real moments and genuine emotions that help hospitality brands connect with their target audiences on a deeper level.</p>
+          <p>We photograph guests enjoying hotel amenities, couples relaxing at spa facilities, families dining together, business travelers working in comfortable spaces, and friends celebrating special occasions. These candid yet carefully composed images show potential guests what their experience at your property could be like, making your marketing more relatable and persuasive.</p>
+          <p>Lifestyle photography is essential for hospitality marketing agencies looking to create emotional connections in their campaigns. We work with professional models and real guests to capture authentic moments that align with your brand values and appeal to your target demographic. From intimate couple portraits to group activities and solo traveler experiences, our lifestyle photography tells stories that inspire bookings and build brand loyalty.</p>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-7" data-context="Happy couple enjoying sunset cocktails on luxury hotel terrace overlooking ocean, candid lifestyle moment with warm golden hour lighting" src="assets/sivan-askayo-photography-photography-service-service-7.webp" alt="Lifestyle photography for hotels" class="service-img">
+        </div>
+      </div>
+
+      <div class="service-detail">
+        <div class="service-detail-content">
+          <h2>Editorial Photography</h2>
+          <p>Editorial photography for publications, magazines, and online media requires a distinctive approach that balances artistic vision with storytelling clarity. Our editorial photography services have been featured in leading hospitality and travel publications, showcasing properties, destinations, and lifestyle experiences to global audiences.</p>
+          <p>We understand the specific requirements of editorial work including tight deadlines, shot lists, and the need for images that work seamlessly with written content. Our editorial photography captures compelling narratives through carefully composed images that engage readers and enhance written stories.</p>
+          <p>Whether you're a real estate developer launching a new hospitality project, a luxury hotelier seeking press coverage, or a marketing agency creating content for editorial partnerships, our photography brings professional credibility and visual impact to your stories. We work efficiently on location, adapt quickly to changing conditions, and deliver publication-ready images that meet editorial standards.</p>
+        </div>
+        <div class="service-detail-image">
+          <img data-placeholder="service-8" data-context="Editorial style photograph of elegant hotel rooftop bar at twilight with city skyline, sophisticated guests, and ambient lighting creating magazine-worthy atmosphere" src="assets/sivan-askayo-photography-photography-service-service-8.webp" alt="Editorial photography for publications" class="service-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-benefits">
+    <div class="container">
+      <h2>Why Choose Sivan Askayo Photography</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-award"></i>
+          <h3>Industry Expertise</h3>
+          <p>Over a decade of experience working with luxury hotels, boutique properties, and leading hospitality brands worldwide.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-camera"></i>
+          <h3>Professional Equipment</h3>
+          <p>State-of-the-art cameras, lenses, and lighting equipment to capture every detail in stunning clarity.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-palette"></i>
+          <h3>Creative Vision</h3>
+          <p>Artistic approach that transforms ordinary spaces and moments into extraordinary visual stories.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-clock"></i>
+          <h3>Timely Delivery</h3>
+          <p>Professional workflow and efficient post-production ensure your images are delivered on schedule.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Collaborative Process</h3>
+          <p>We work closely with your team to understand your vision and deliver images that exceed expectations.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-globe"></i>
+          <h3>Global Experience</h3>
+          <p>Extensive portfolio of international projects across diverse locations and cultural contexts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Let's Create Something Extraordinary</h2>
+      <p>Contact us today to discuss your photography needs and receive a customized proposal for your project.</p>
+      <a href="/contact" class="btn-primary">Request a Quote</a>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Sivan Askayo Photography. All rights reserved.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="Privacy Policy">
+              Privacy Policy
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="Accessibility">
+              Accessibility
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="Terms & Conditions">
+              Terms & Conditions
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>Generated by <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '68c2cc33-7bdf-4b99-8ccc-bbdcfeb4cb7f';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
